@@ -79,3 +79,9 @@ form {
 .todos .hidden {
   display: none;
 }
+
+small {
+  color: rgb(185, 185, 185);
+  margin-top: 3rem;
+  text-align: center;
+}
