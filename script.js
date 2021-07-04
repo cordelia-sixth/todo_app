@@ -31,24 +31,41 @@ function addTodo(todo) {
 
   if(todoText) {
     const todoElm = document.createElement('li');
+    
+    // 
+    todoElm.innerHTML = `
+      ${todoText}
+      <button class="trash hidden">
+        <i class="fas fa-trash"></i>
+      </button>
+    `;
+    // 
 
     if(todo && todo.completed) {
-      console.log('hi');
-      // todoElm.classList.add('completed');
+      todoElm.classList.add('completed');
     }
 
-    todoElm.innerText = todoText;
+    // todoにマウスオーバー
+    const deleteBtn = todoElm.querySelector('.trash');
+    todoElm.addEventListener('mouseover', () => {
+      deleteBtn.classList.toggle('hidden');
+    });
 
-    todoElm.addEventListener('click', () => {
-      todoElm.classList.toggle('completed');
+    todoElm.addEventListener('mouseout', () => {
+      deleteBtn.classList.toggle('hidden');
+    });
+
+    // todoを削除
+    deleteBtn.addEventListener('mouseup', event => {
+      todoElm.remove();
 
       updateLS();
     });
 
-    todoElm.addEventListener('contextmenu', event => {
-      event.preventDefault();
+    // todoを完了 or 未完了にする
+    todoElm.addEventListener('mouseup', () => {
+      todoElm.classList.toggle('completed');
 
-      todoElm.remove();
       updateLS();
     });
 
