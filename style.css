@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: rgb(231, 231, 231);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+h1 {
+  color: rgb(25, 131, 201);
+  font-size: 5rem;
+  text-align: center;
+  opacity: 0.6;
+}
+
+form {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  width: 400px;
+}
+
+.input {
+  background-color: rgb(250, 250, 250);
+  border: none;
+  color: rgb(44, 44, 44);
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  display: block;
+  width: 100%;
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgb(185, 185, 185);
+}
+
+.todos {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.todos li {
+  border-top: 1px solid rgb(231, 231, 231);
+  background-color: rgb(250, 250, 250);
+  color: rgb(44, 44, 44);
+  cursor: pointer;
+
+  /* todoテキストと削除ボタンを左右寄せにする */
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.todos .completed {
+  color: rgb(185, 185, 185);
+  text-decoration: line-through;
+}
+
+.todos .trash {
+  background-color: transparent;
+  color: rgb(44, 44, 44);
+  border: none;
+  margin-right: -0.7rem;
+  cursor: pointer;
+}
+
+.todos .hidden {
+  display: none;
+}
